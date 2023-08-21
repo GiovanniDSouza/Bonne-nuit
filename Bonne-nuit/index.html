@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Aba</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+       <!--Jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+
+     <div class="vontainer"> 
+        <img src="https://source.unsplash.com/random?paisagem" class="item current-item" id="img">
+        <div>
+            <img class="profile-avatar"  id="imgPhotoo" >
+            <input type="file" id="flImage" name="fImage" accept="image/*">
+             
+        </div>
+            <div class="chat-area"></div>
+            
+            <div id="msgImporta">
+                <ol>
+                    <li data-index="0" tabindex="0"><p><img src="https://icons.duckduckgo.com/ip3/www.figma.com.ico" alt="" class="img"><span>Untitled – Figma</span></p>
+                        <pre>https://www.figma.com/file/d2IXdKd2gy2yRzQC1ZNblB/Untitled?node-id=0-1</pre></li>
+                        <li data-index="1" tabindex="0"><p><img src="https://icons.duckduckgo.com/ip3/docs.google.com.ico" alt="" class="img">
+                            <span>Documento sem título - Documentos Google</span></p>
+                            <pre>https://docs.google.com/document/d/1hbGYUgRvEPUKco1Jaolv-hse-Y7qLBttK5HyGqLADio/edit#</pre></li>
+                            <li data-index="2" tabindex="0"><p><img src="https://icons.duckduckgo.com/ip3/poki.com.br.ico" alt="" class="img">
+                                <span>HEART STAR - Jogue Heart Star no Poki</span></p><pre>https://poki.com.br/g/heart-star-html5</pre></li></ol>
+                   <div>
+                    <button id="cancelar" onclick="importarr();">Cancelar</button>
+                   </div>
+            </div>
+         <div id="clock" >
+            <div id="time">
+                <div><span id="hour">00</span></div>
+                <div><span id="minutes">00</span></div>
+                <div><span id="seconds">00</span></div>
+               
+            </div>
+            <p class="days" id="date">Domingo, 7 de maio</p>
+            <p class="days" id="dat">Domingo, 7 de maio</p>
+          </div>
+          <div id="clockContainer">
+            <div id="clockAn"></div>
+            <div id="hourr"></div>
+            <div id="minutee"></div>
+            <div id="secondd"></div>
+            
+            <p class="days" id="datee">Domingo, 7 de maio</p>
+          </div>
+          <div class="bomDia">
+            <p id="dia">Boa Dia</p>
+          </div>
+          <div class="bomDia" >
+            <p id="tarde">Boa Tarde</p>
+          </div>
+          <div class="bomDia" >
+            <p id="noite">Boa Noite</p>
+          </div>
+          <div class="bomDia" >
+            <p id="madrugada">Boa Madrugada</p>
+          </div>
+         
+          <input type="search" name="" id="search">
+
+          <div id="pocket-editor">
+            <textarea name="" cols="3" rows="1" id="notas"></textarea>
+           
+          </div>
+         <div id="pai">
+            <div class="dropdown">
+              <i onclick="myFunction()"  class="fa fa-cog dropbtn" id="setting"></i>
+            
+              <div id="myDropdown" class="dropdown-content">
+                <div id="port">
+                    <p class="fundos">GERAL</p>
+                    <p class="fundoss">GENERAL</p>
+                    <div class="fundo" id="funnnn">
+                        <div class="texx">
+                            <P class="portugues">Mostrar todas configurações</P>
+                           <p class="ingl">Show all settings</p>
+                           <p class="espanhol">Mostrar todos los ajustes</p>
+                            <div class="center" onclick="mostraGeral();">
+                                <input id="btn1" type="checkbox" name="" value="">
+                            </div>
+                        </div>
+                        <div class="geral" id="alinha">
+                            <p class="portugues">Idioma</p>
+                            <p class="ingl">Language</p>
+                            <p class="espanhol">Lenguaje o idioma</p>
+                            <select id="i_ype" onclick="idiomas();">
+                                <option vclass="trn" >Português (Brasil)</option>
+                                <option vclass="trn" >English</option>
+                                <option  class="trn">Espanõl</option>
+                            </select>
+                        </div>
+                        <div class="geral" id="noturno">
+                            <p class="portugues">Modo noturno</p>
+                            <p class="ingl">Dark mode</p>
+                            <p class="espanhol">Modo Oscuro</p>
+                            <select id="i_dark" onclick="dark();">
+                                <option class="trn portugues" >Ativo</option>
+                                <option class="trn ingl">Enabled</option>
+                                <option class="trn portugues" >Desativo</option>
+                                <option class="trn ingl">Disabled</option>
+                             
+                            </select>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+
+                
+
+                <div>
+                    <p class="fundos">FUNDO</p>
+                    <p class="fundoss">BACKGROUND</p>
+                    <div class="fundo" id="fundo">
+                        <div class="back">
+                            <p class="portugues">Tipo de background</p>
+                            <p class="ingl">Background type</p>
+                            <p class="espanhol">Tipo de fondo</p>
+                            <select id="i_type" onclick=" backgroun();">
+                                <option class="trn">Unsplash</option>
+                                <option class="trn" >Arquivo local</option>
+                            </select>
+                        </div>
+                     
+                        <div class="atua">
+                            <p class="portugues">Frequência de atualização</p>
+                            <p class="ingl">Frequency</p>
+                            <p class="espanhol">Frecuencia</p>
+                            <select id="i_typeee">
+                                <option value="unsplash" class="trn">A cada hora</option>
+                                <option value="local" class="trn" >Luz do dia</option>
+                            </select>
+                        </div>
+                     
+                        <div id="local">
+                            <div class="imgBack" id="imgBack">
+                                <p id="imgPhoto" class="portugues">Suba o seu background aqui</p>
+                                <p id="imgPhoto" class="ingl">Upload background here</p>
+                            </div>
+                        </div>
+                        <div  id="atua">
+                            <div class="atua">
+                                <p class="portugues">Coleção do Unsplash</p>
+                                <p class="ingl">Unsplash collection</p>
+                                <p class="espanhol">Colección Unsplash</p>
+                                <select id="i_typee" onclick="praia();">
+                                    <option class="trn" >Natureza</option>
+                                    <option class="trn" id="prai" >Beach</option>
+                                    <option  class="trn">Animal</option>
+                                    <option  class="trn">Peru</option>
+                                    <option  class="trn">Universo</option>
+                                    <option  class="trn">Cerejeira</option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="back">
+                            <p class="portugues">Intensidade do desfoque</p>
+                            <p class="ingl">Blur intensity</p>
+                            <p class="espanhol">Intensidad de desenfoque</p>
+                            <input type="range" name="" id="" class="range">
+                        </div>
+                        <hr>
+                        <div class="back">
+                            <p class="portugues">Brilho</p>
+                            <p class="ingl">Brightness</p>
+                            <p class="espanhol">Brillo</p>
+                            <input type="range" name="" id="" class="rangee">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="fundos">LINKS RÁPIDOS</p>
+                    <p class="fundoss">QUICK LINKS</p>
+                    <div class="fundo" id="funLink">
+                        <div class="tex">
+                            <div class="texx" id="link">
+                                <P class="portugues">Ativar</P>
+                                <p class="ingl">Enable</p>
+                                <p class="espanhol">Activar</p>
+                                <div class="center" onclick="link();">
+                                    <input id="btn6" type="checkbox" name="" value="1">
+                                </div>
+                            </div>
+                         
+                            
+                            <hr id="ativas">
+                            <input  type="text" id="in" placeholder="Nome">
+                            <button class="submitt" value="enviar" onclick="importar();">Importar</button>
+                            <input  type="url" id="inn" placeholder="URL">
+                            <button class="submit" value="enviar">Adicionar</button>
+
+                            <div class="atua" id="estilo">
+                                <p class="portugues">Estilo</p>
+                                <p class="ingl">Style</p>
+                                <p class="espanhol">Apariencia</p>
+                                <select id="i_typ" onclick="estilo();">
+                                    <option vclass="trn" >Grande</option>
+                                    <option vclass="trn" >Médio</option>
+                                    <option  class="trn">Pequeno</option>
+                                    <option  class="trn">Texto</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="fundos">HORA & DATA</p>
+                    <p class="fundoss">TIME & DATE</p>
+                    <div class="fundo" id="fun">
+                        <div class="tex">
+                            <div class="texx">
+                                <P class="portugues" id="removerNotas">Ativar</P>
+                                <p class="ingl">Enable</p>
+                                <p class="espanhol">Activar</p>
+                                <div class="center" onclick="alo();">
+                                    <input id="btn3" type="checkbox" name="" value="1">
+                                </div>
+                            </div>
+                         
+                            <div class="texx" id="remo">
+                                <P class="portugues" id="removerNotas">Relógio Analógico</P>
+                                <p class="ingl">Analog dock</p>
+                                <p class="espanhol">Reloj Analógico</p>
+                                <div class="center" onclick="analogico();">
+                                    <input id="btn4" type="checkbox" name="" value="1">
+                                </div>
+                            </div>
+                            <div class="texx" id="rem">
+                                <P class="portugues" id="removerNotas">Formato de data do EUA</P>
+                                <p class="ingl">US Date Format</p>
+                                <p class="espanhol">Formato de fecha americano</p>
+                                <div class="center" onclick="data();">
+                                    <input id="btn7" type="checkbox" name="" value="1">
+                                </div>
+                            </div>
+                            <div class="texx" id="remoo">
+                                <P class="portugues" id="removerNotas">Mostrar segundos</P>
+                                <p class="ingl">Show Seconds</p>
+                                <p class="espanhol">Mostrar los segundos</p>
+                                <div class="center" onclick="segundos();">
+                                    <input id="btn5" type="checkbox" name="" value="1">
+                                </div>
+                            </div>
+                            
+                            <div class="atua" id="rm">
+                                <p class="portugues">Disque</p>
+                                <p class="ingl">Clock style</p>
+                                <p class="espanhol">Marque</p>
+                                <select id="i_ty" onclick="disque();">
+                                    <option vclass="trn" >Rodada</option>
+                                    <option vclass="trn" >Praça</option>
+                                    <option  class="trn">Transparente</option>
+                                    
+                                </select>
+                            </div>
+                            <div class="atua" id="mr">
+                                <p class="portugues">Mostrar</p>
+                                <p class="ingl">Show</p>
+                                <p class="espanhol">Mostrar</p>
+                                <select id="i_t" onclick="relogioD();">
+                                    <option vclass="trn" >Relógio e data</option>
+                                    <option vclass="trn" >Apenas relógio</option>
+                                    <option  class="trn">Apenas data</option>
+                                    
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <p class="fundos">CLIMA E SAUDAÇÕES</p>
+                    <p class="fundoss">WEATHER & GREETINGS</p>
+                    <div class="fundo" id="funClima">
+                        <div class="tex">
+                            <div class="texx">
+                                <P class="portugues"id="removerNotas">Ativar</P>
+                                <p class="ingl">Enable</p>
+                                <p class="espanhol">Activar</p>
+                                <div class="center" onclick="clima();">
+                                    <input id="btn10" type="checkbox" name="" value="1">
+                                </div>
+                            </div>
+                         
+                            <div class="texx" id="geo">
+                                <P class="portugues" id="removerNotas">Geolocalização</P>
+                                <p class="ingl">Geolocation</p>
+                                <p class="espanhol">Geolocalización</p>
+                                <div class="center" onclick="geoloca();">
+                                    <input id="btn11" type="checkbox" name="" value="1">
+                                </div>
+                            </div>
+                            <div class="texx" id="unii">
+                                <P class="portugues" id="removerNotas">Unidades imperiais</P>
+                                <p class="ingl">Imperial units</p>
+                                <p class="espanhol">Sistema imperial</p>
+                                <div class="center" onclick="unidades();">
+                                    <input id="btn12" type="checkbox" name="" value="1">
+                                </div>
+                            </div>
+                            <div class="texx" id="sau">
+                                <P class="portugues" id="removerNotas">Saudações</P>
+                                <p class="ingl">Greetings</p>
+                                <p class="espanhol">Saludos</p>
+                                <div class="center" onclick="saudacoes();">
+                                    <input id="btn13" type="checkbox" name="" value="1">
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="fundos">NOTAS</p>
+                    <p class="fundoss">NOTES</p>
+                    <div class="fundo"  id="funn">
+                        <div class="tex">
+                            <div class="texx">
+                                <P class="portugues" id="removerNotas">Ativar</P>
+                                <p class="ingl">Enable</p>
+                                <p class="espanhol">Activar</p>
+                                <div class="center">
+                                    <input id="btn2" type="checkbox" name="" value="2">
+                                </div>
+                            </div>
+                        
+                            <div class="atua" id="alinhaa">
+                                <p class="portugues">Alinhamento do texto</p>
+                                <p class="ingl">Text alignment</p>
+                                <p class="espanhol">Alineación del texto</p>
+                                <select id="i_typeeee" onclick="posicao();">
+                                    <option vclass="trn" >À Esquerda</option>
+                                    <option vclass="trn" >Centro</option>
+                                    <option  class="trn">À Direita</option>
+                                </select>
+                            </div>
+                         
+                            <div class="back" id="lar">
+                                <p class="portugues">Largura</p>
+                                <p class="ingl">Width</p>
+                                <p class="espanhol">Ancho</p>
+                                <input type="range" name="" id="" class="ran">
+                            </div>
+                            
+                            <div class="back" id="larg">
+                                <p class="portugues">Opacidade</p>
+                                <p class="ingl">Opacity</p>
+                                <p class="espanhol">Opacidad</p>
+                                <input type="range" name="" id="" class="rang">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="fundos">BARRA DE PESQUISA</p>
+                    <p class="fundoss">SEARCH BAR</p>
+                    <div class="fundo"  id="funnn">
+                        <div class="tex">
+                            <div class="texx">
+                                <P class="portugues" id="removerNotas">Ativar</P>
+                                <p class="ingl">Enable</p>
+                                <p class="espanhol">Activar</p>
+                                <div class="center" onclick="ativarBarra();">
+                                    <input id="btn14" type="checkbox" name="" value="2">
+                                </div>
+                            </div>
+                        <hr id="linhaBarra">
+                            <div class="texx" id="novaAba">
+                                <P class="portugues" id="removerNotas">Abrir em nova aba</P>
+                                <p class="ingl">Open in new tab</p>
+                                <p class="espanhol">Abrir en una pestaña nueva</p>
+                                <div class="center" onclick="ativarBarra();">   
+                                    <input id="btn15" type="checkbox" name="" value="2">
+                                </div>
+                            </div>
+                        
+                            <div class="atua" id="alinhaa">
+                                <p class="portugues">Buscadores</p>
+                                <p class="ingl">Seekers</p>
+                                <p class="espanhol">Buscadores</p>
+                                <select id="i_typeeee" onclick="posicao();">
+                                    <option class="trn" >Google</option>
+                                    <option class="trn" >Yahoo</option>
+                                    <option class="trn">Brave</option>
+                                </select>
+                            </div>
+                         
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="fundos">ESTILO PERSONALIZADO</p>
+                    <p class="fundoss">CUSTOM STYLE</p>
+                    <div class="fund"  >
+                        <div class="tex">
+                            <textarea name="" id="css" cols="30" rows="10" placeholder="Insira seu CSS personalizado"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="cogg">
+                    
+                <i onclick="fun();"  id="cog" class="fa fa-cog"></i>
+                </div>
+                <div class="finalBonn">
+                    <p>Bonne nuit</p>
+                    <p id="namber"> 1.20.0</p>
+                    <a href="https://github.com/GiovanniDSouza"><i class="fa fa-github" id="git"></i></a>
+                </div>
+                <div class="textFin">
+                    <p class="portugues">Feito no Brasil com </p>
+                    <p class="ingl">Made in Brazil with </p>
+                    <p class="espanhol">Hecho en Brasil con </p>
+                    <p id="corazon">❤</p>
+                    <p class="portugues" id="porG">por <a href="https://www.linkedin.com/in/giovanni-souza-697b8b193/" id="porGg">Giovanni Souza</a></p>
+                    <p class="ingl"  id="porG">by <a href="https://www.linkedin.com/in/giovanni-souza-697b8b193/" id="porGg">Giovanni Souza</a></p>
+                    <p class="espanhol" id="porG">by <a href="https://www.linkedin.com/in/giovanni-souza-697b8b193/" id="porGg">Giovanni Souza</a></p>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+     </div>
+   
+  
+    <script src="style.js"></script>
+    <script src="query.js"></script>
+</body>
+</html>
